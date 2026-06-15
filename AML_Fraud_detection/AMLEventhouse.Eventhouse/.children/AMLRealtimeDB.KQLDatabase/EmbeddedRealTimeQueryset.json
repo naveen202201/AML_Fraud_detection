@@ -1,0 +1,45 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "f40f2529-3202-4870-b172-d285fe91517b",
+        "clusterUri": "https://trd-hj52ww5yz9tv4m55ym.z0.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "AMLRealtimeDB"
+      },
+      {
+        "id": "ece764bf-878f-4f03-8f51-bd508bf5c902",
+        "clusterUri": "https://trd-hj52ww5yz9tv4m55ym.z0.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "AMLRealtimeDB"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "31fdf336-3cc4-48a3-ad59-14b7f49f258d",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n\n// Use \"take\" to view a sample number of records in the table and check the data.\nYOUR_TABLE_HERE\n| take 100\n\n// See how many records are in the table.\nYOUR_TABLE_HERE\n| count\n\n// This query returns the number of ingestions per hour in the given table.\nYOUR_TABLE_HERE\n| summarize IngestionCount = count() by bin(ingestion_time(), 1h)\n\n",
+        "title": "Tab",
+        "dataSourceId": "ece764bf-878f-4f03-8f51-bd508bf5c902"
+      },
+      {
+        "id": "2af0df62-af26-4472-b61b-4c1369954156",
+        "content": "realtime_transactions\n| where account_id == \"ACC-DEMO-01\"",
+        "title": "",
+        "dataSourceId": "ece764bf-878f-4f03-8f51-bd508bf5c902"
+      },
+      {
+        "id": "fd013a50-9283-40ae-8afb-fcc3645eb65c",
+        "content": ".show table realtime_transactions ingestion json mapping \"realtime_transactions_mapping\"\n\n.alter table realtime_transactions ingestion json mapping \"realtime_transactions_mapping\"\n'[{\"column\":\"txn_id\",\"path\":\"$[\\'txn_id\\']\",\"datatype\":\"\"},{\"column\":\"account_id\",\"path\":\"$[\\'account_id\\']\",\"datatype\":\"\"},{\"column\":\"customer_id\",\"path\":\"$[\\'customer_id\\']\",\"datatype\":\"\"},{\"column\":\"counterparty_account\",\"path\":\"$[\\'counterparty_account\\']\",\"datatype\":\"\"},{\"column\":\"amount\",\"path\":\"$[\\'amount\\']\",\"datatype\":\"\"},{\"column\":\"currency\",\"path\":\"$[\\'currency\\']\",\"datatype\":\"\"},{\"column\":\"txn_type\",\"path\":\"$[\\'txn_type\\']\",\"datatype\":\"\"},{\"column\":\"channel\",\"path\":\"$[\\'channel\\']\",\"datatype\":\"\"},{\"column\":\"country\",\"path\":\"$[\\'country\\']\",\"datatype\":\"\"},{\"column\":\"merchant_cat\",\"path\":\"$[\\'merchant_cat\\']\",\"datatype\":\"\"},{\"column\":\"pattern_label\",\"path\":\"$[\\'pattern_label\\']\",\"datatype\":\"\"},{\"column\":\"timestamp\",\"path\":\"$[\\'timestamp\\']\",\"datatype\":\"\"}]'\n",
+        "title": "",
+        "dataSourceId": "ece764bf-878f-4f03-8f51-bd508bf5c902"
+      },
+      {
+        "id": "2d8946c1-9d80-43b0-aaba-c02a744c8ef5",
+        "content": "// Use 'take' to view a sample number of records in the table and check the data.\nrealtime_transactions\n| take 100\n",
+        "title": "",
+        "dataSourceId": "ece764bf-878f-4f03-8f51-bd508bf5c902"
+      }
+    ]
+  }
+}

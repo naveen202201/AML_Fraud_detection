@@ -1,0 +1,120 @@
+table accounts
+	lineageTag: b86d3b11-b642-4f57-b71d-125b580d3e52
+	sourceLineageTag: [dbo].[accounts]
+
+	column account_id
+		dataType: string
+		lineageTag: 5d66e25c-7f33-451b-8983-aed9d10c682a
+		sourceLineageTag: account_id
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: fbb7929d-6092-4fc4-af87-922a6593dd9c
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column acct_type
+		dataType: string
+		lineageTag: e8245908-10a3-4163-9905-2f6e52da9309
+		sourceLineageTag: acct_type
+		summarizeBy: none
+		sourceColumn: acct_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column open_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4168e6eb-09ab-4c59-8039-495c4e21a494
+		sourceLineageTag: open_date
+		summarizeBy: none
+		sourceColumn: open_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_inactive
+		dataType: int64
+		formatString: 0
+		lineageTag: e744303b-6d69-4be0-a2fc-d2e9d8f7ccec
+		sourceLineageTag: days_inactive
+		summarizeBy: sum
+		sourceColumn: days_inactive
+
+		annotation SummarizationSetBy = Automatic
+
+	column txn_count_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: bfa6ac56-c767-4758-81eb-1e516042c24c
+		sourceLineageTag: txn_count_30d
+		summarizeBy: sum
+		sourceColumn: txn_count_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column avg_txn_amount
+		dataType: double
+		lineageTag: c73d97c9-094b-4496-9b16-31ee29995b39
+		sourceLineageTag: avg_txn_amount
+		summarizeBy: sum
+		sourceColumn: avg_txn_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column countries_30d
+		dataType: int64
+		formatString: 0
+		lineageTag: d49e2165-0504-4fec-9a8e-4d1b085a1d87
+		sourceLineageTag: countries_30d
+		summarizeBy: sum
+		sourceColumn: countries_30d
+
+		annotation SummarizationSetBy = Automatic
+
+	column cash_ratio
+		dataType: double
+		lineageTag: a18f02a2-fd99-4374-ba58-17ae539339a0
+		sourceLineageTag: cash_ratio
+		summarizeBy: sum
+		sourceColumn: cash_ratio
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column risk_score
+		dataType: double
+		lineageTag: 2add8604-099a-4f36-86bc-3ecc81c66992
+		sourceLineageTag: risk_score
+		summarizeBy: sum
+		sourceColumn: risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column risk_tier
+		dataType: string
+		lineageTag: 1d111bb2-7129-455c-9792-0ed028eb1741
+		sourceLineageTag: risk_tier
+		summarizeBy: none
+		sourceColumn: risk_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	partition accounts = entity
+		mode: directLake
+		source
+			entityName: accounts
+			schemaName: dbo
+			expressionSource: 'DirectLake - AMLLakehouse'
+

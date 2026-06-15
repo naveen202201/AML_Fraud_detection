@@ -1,0 +1,91 @@
+[
+  {
+    "uniqueIdentifier": "ab206b03-1712-4563-b71f-0f554df7b9ec",
+    "payload": {
+      "name": "AMLTransactionStream",
+      "description": "Container Description",
+      "type": "eventstreams"
+    },
+    "type": "container-v1"
+  },
+  {
+    "uniqueIdentifier": "d7dc45ce-43e2-5dfe-b907-276ac22d469d",
+    "payload": {
+      "name": "AMLTransactionStream-stream event",
+      "metadata": {
+        "eventstreamArtifactId": "3d737720-6d13-45ec-a378-7fc4cadf8a34",
+        "eventTypes": [
+          {
+            "name": "AMLTransactionStream"
+          }
+        ]
+      },
+      "parentContainer": {
+        "targetUniqueIdentifier": "ab206b03-1712-4563-b71f-0f554df7b9ec"
+      }
+    },
+    "type": "eventstreamSource-v1"
+  },
+  {
+    "uniqueIdentifier": "0a6e5492-4b19-4806-a6c4-8b4c219cb93b",
+    "payload": {
+      "name": "AMLTransactionStream-stream event",
+      "parentContainer": {
+        "targetUniqueIdentifier": "ab206b03-1712-4563-b71f-0f554df7b9ec"
+      },
+      "definition": {
+        "type": "Event",
+        "instance": "{\"steps\":[{\"id\":\"187bfed0-d640-4b8b-8474-2ceb53a87332\",\"name\":\"SourceEventStep\",\"rows\":[{\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"d7dc45ce-43e2-5dfe-b907-276ac22d469d\"}],\"kind\":\"SourceReference\",\"name\":\"SourceSelector\"}]}],\"templateId\":\"SourceEvent\",\"templateVersion\":\"1.2.6\"}"
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "03b7c968-6c1c-4f66-ba19-0940b5573606",
+    "payload": {
+      "name": "AMLActivator-Structuring",
+      "parentContainer": {
+        "targetUniqueIdentifier": "ab206b03-1712-4563-b71f-0f554df7b9ec"
+      },
+      "definition": {
+        "type": "Rule",
+        "instance": "{\"templateId\":\"EventTrigger\",\"templateVersion\":\"1.2.6\",\"steps\":[{\"name\":\"FieldsDefaultsStep\",\"id\":\"7b63c887-efb8-449d-9cb8-9730f46551cc\",\"rows\":[{\"name\":\"EventSelector\",\"kind\":\"Event\",\"arguments\":[{\"kind\":\"EventReference\",\"type\":\"complex\",\"arguments\":[{\"name\":\"entityId\",\"type\":\"string\",\"value\":\"0a6e5492-4b19-4806-a6c4-8b4c219cb93b\"}],\"name\":\"event\"}]}]},{\"name\":\"EventDetectStep\",\"id\":\"4c759508-2665-48e3-a9ae-3ede66e2e714\",\"rows\":[{\"name\":\"OnEveryValue\",\"kind\":\"OnEveryValue\",\"arguments\":[]}]},{\"name\":\"ActStep\",\"id\":\"4f7e5bfc-a9f4-4d98-a867-aef4669bec68\",\"rows\":[{\"name\":\"TeamsBinding\",\"kind\":\"TeamsMessage\",\"arguments\":[{\"name\":\"messageLocale\",\"type\":\"string\",\"value\":\"en-us\"},{\"name\":\"recipients\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"odl_user_2257125@sandboxailabs1010.onmicrosoft.com\"}]},{\"name\":\"headline\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"Activator alert\"}]},{\"name\":\"optionalMessage\",\"type\":\"array\",\"values\":[{\"type\":\"string\",\"value\":\"The condition has been met\"}]},{\"name\":\"additionalInformation\",\"type\":\"array\",\"values\":[]}]}]}]}",
+        "settings": {
+          "shouldRun": false,
+          "shouldApplyRuleOnUpdate": false
+        }
+      }
+    },
+    "type": "timeSeriesView-v1"
+  },
+  {
+    "uniqueIdentifier": "a6b604f8-d5c6-4e99-a88f-31b00afc9314",
+    "payload": {
+      "name": "HIGH",
+      "parameters": [
+        {
+          "key": "txn_count"
+        }
+      ]
+    },
+    "type": "powerAutomateFlowAction-v1"
+  },
+  {
+    "uniqueIdentifier": "e519a37e-0a01-4069-8155-52f701a7cc81",
+    "payload": {
+      "name": "HIGH",
+      "parameters": [
+        {
+          "key": "account_id"
+        },
+        {
+          "key": "txn_count"
+        },
+        {
+          "key": "total_amount"
+        }
+      ]
+    },
+    "type": "powerAutomateFlowAction-v1"
+  }
+]

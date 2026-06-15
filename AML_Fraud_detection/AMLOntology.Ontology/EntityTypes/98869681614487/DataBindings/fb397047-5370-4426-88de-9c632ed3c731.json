@@ -1,0 +1,64 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "fb397047-5370-4426-88de-9c632ed3c731",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "account_id",
+        "targetPropertyId": "40067850603009473"
+      },
+      {
+        "sourceColumnName": "analyst_decision",
+        "targetPropertyId": "40067852186380369"
+      },
+      {
+        "sourceColumnName": "created_at",
+        "targetPropertyId": "40067851185746389"
+      },
+      {
+        "sourceColumnName": "customer_id",
+        "targetPropertyId": "40067849611368265"
+      },
+      {
+        "sourceColumnName": "detection_source",
+        "targetPropertyId": "40067850812381095"
+      },
+      {
+        "sourceColumnName": "flag_id",
+        "targetPropertyId": "40067849248388681"
+      },
+      {
+        "sourceColumnName": "ml_score",
+        "targetPropertyId": "40067851568417026"
+      },
+      {
+        "sourceColumnName": "notes",
+        "targetPropertyId": "40067849493488173"
+      },
+      {
+        "sourceColumnName": "pattern_type",
+        "targetPropertyId": "40067850801477644"
+      },
+      {
+        "sourceColumnName": "rule_id",
+        "targetPropertyId": "40067849300827250"
+      },
+      {
+        "sourceColumnName": "severity",
+        "targetPropertyId": "40067851793098596"
+      },
+      {
+        "sourceColumnName": "txn_id",
+        "targetPropertyId": "40067851684622251"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "57bacf01-0854-9395-4a89-4e4a1fa23f09",
+      "sourceTableName": "suspicious_flags",
+      "sourceSchema": "dbo"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "5ab20d0f-70d7-436b-a181-f7bfc3e04494",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "account_id",
+        "targetPropertyId": "31929263942295989"
+      },
+      {
+        "sourceColumnName": "amount",
+        "targetPropertyId": "31929266591518575"
+      },
+      {
+        "sourceColumnName": "channel",
+        "targetPropertyId": "31929264248556302"
+      },
+      {
+        "sourceColumnName": "counterparty_account",
+        "targetPropertyId": "31929264798054388"
+      },
+      {
+        "sourceColumnName": "country",
+        "targetPropertyId": "31929265562236274"
+      },
+      {
+        "sourceColumnName": "currency",
+        "targetPropertyId": "31929264305387638"
+      },
+      {
+        "sourceColumnName": "customer_id",
+        "targetPropertyId": "31929265751102443"
+      },
+      {
+        "sourceColumnName": "merchant_cat",
+        "targetPropertyId": "31929264565974587"
+      },
+      {
+        "sourceColumnName": "pattern_label",
+        "targetPropertyId": "31929264552185628"
+      },
+      {
+        "sourceColumnName": "txn_id",
+        "targetPropertyId": "31929263700819140"
+      },
+      {
+        "sourceColumnName": "txn_type",
+        "targetPropertyId": "31929266941641481"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "57bacf01-0854-9395-4a89-4e4a1fa23f09",
+      "sourceTableName": "transactions",
+      "sourceSchema": "dbo"
+    }
+  }
+}

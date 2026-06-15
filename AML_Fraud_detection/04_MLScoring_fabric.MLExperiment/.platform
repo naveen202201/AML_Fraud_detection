@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "MLExperiment",
+    "displayName": "04_MLScoring_fabric"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "260fd888-70b6-9ee6-4d5a-3439c7b603e1"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDashboard",
+    "displayName": "AML-RealTime-Monitor",
+    "description": "AML-RealTime-Monitor"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "f614f1bb-9395-9435-43dc-1e24e3354477"
+  }
+}

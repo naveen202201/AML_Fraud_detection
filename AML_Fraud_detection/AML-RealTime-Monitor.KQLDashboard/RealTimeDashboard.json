@@ -1,0 +1,352 @@
+{
+  "schema_version": 75,
+  "autoRefresh": {
+    "enabled": true,
+    "defaultInterval": "30s",
+    "minInterval": "30s"
+  },
+  "tiles": [
+    {
+      "id": "5bc2fec0-9f6f-4dc8-8495-b0a7ab8fff80",
+      "title": "1_STRUCTURING_HIGH",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 4,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "1e5679ac-6d14-4ca9-b957-f6477a310218"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "05cfe4c1-65dd-43f7-9bd7-adab84281a7f",
+      "title": "2_3_LAYERING_MULE_CRITICAL",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 13,
+        "y": 0,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "32430b4e-6753-4c61-8b65-9aba762f88f6"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "617b0b88-bcd6-4c5d-b5ce-e24749619edc",
+      "title": "4_DORMANT_ACCOUNT_SPIKE_HIGH",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 4,
+        "y": 7,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "c9be22c6-aeaf-4b29-a236-5c66c68826fc"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "bbdedb2a-40ab-41ff-9ebe-d5f71a2d7041",
+      "title": "5_HIGH_VELOCITY_MEDIUM",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 13,
+        "y": 7,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "6caee19f-1773-432b-8308-05c2077b98d6"
+      },
+      "visualOptions": {
+        "table__enableRenderLinks": true,
+        "colorRulesDisabled": true,
+        "crossFilterDisabled": false,
+        "drillthroughDisabled": false,
+        "crossFilter": [],
+        "drillthrough": [],
+        "table__renderLinks": [],
+        "colorRules": [],
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "d70a8b44-1646-4c32-a2b2-8688d4981906",
+      "title": "6_SMURFING_HIGH",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 4,
+        "y": 14,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "8b89852f-ce9b-4c60-976e-fdf8ea0f30f7"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "39332d18-4701-47b0-945a-f7d8dc0bbb09",
+      "title": "7_CASH INTENSIVE AT NIGHT_HIGH",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 13,
+        "y": 14,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "bdedd5fa-98cb-4aff-98ee-4b6ea821f322"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "ef258bc0-6eb2-449c-92eb-2ec75f4a661a",
+      "title": "8_WATCHLIST HIT / PEP_CRITICAL",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 4,
+        "y": 21,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "fc49a6b4-2ade-4b65-a839-cb9d0c5dde86"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "bc229ba5-97b2-49b3-8761-675bba569e0e",
+      "title": "9_LIVE FLAG MONITOR_Operations Agent polls this",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 13,
+        "y": 21,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "ff5471cf-f3bf-4528-b552-80c474455f0f"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    },
+    {
+      "id": "cc4ee108-8aec-4f1c-b43f-2df369793474",
+      "title": "11_CIRCULAR FLOW / ROUND-TRIPPING",
+      "visualType": "table",
+      "pageId": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e",
+      "layout": {
+        "x": 4,
+        "y": 28,
+        "width": 9,
+        "height": 7
+      },
+      "queryRef": {
+        "kind": "query",
+        "queryId": "4e6fbb4e-9579-417a-ae4c-d1a20c5093b1"
+      },
+      "visualOptions": {
+        "selectedDataOnLoad": {
+          "all": true,
+          "limit": 10
+        }
+      }
+    }
+  ],
+  "baseQueries": [],
+  "parameters": [
+    {
+      "kind": "duration",
+      "id": "b7939110-ec01-461c-9460-44009d06f46c",
+      "displayName": "Time range",
+      "description": "",
+      "beginVariableName": "_startTime",
+      "endVariableName": "_endTime",
+      "defaultValue": {
+        "kind": "dynamic",
+        "count": 1,
+        "unit": "hours"
+      },
+      "showOnPages": {
+        "kind": "all"
+      }
+    }
+  ],
+  "dataSources": [
+    {
+      "id": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30",
+      "kind": "kusto-trident",
+      "name": "AMLRealtimeDB",
+      "clusterUri": "",
+      "databaseArtifactId": "88ec90a3-0472-4c57-86df-1efe2887e40d",
+      "database": "2887e40d-1efe-86df-4c57-047288ec90a3",
+      "workspace": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "pages": [
+    {
+      "name": "Page 1",
+      "id": "bff125cf-8816-4d7b-9da0-b1aa3cb52f4e"
+    }
+  ],
+  "queries": [
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "realtime_transactions\n| extend timestamp = todatetime(timestamp)\n| where timestamp > ago(24h)\n| where amount between (8000 .. 9999)\n| summarize txn_count = count(),\n            total_amount = sum(amount),\n            first_txn = min(timestamp),\n            last_txn = max(timestamp)\n    by account_id, customer_id, bin(timestamp, 1d)\n| where txn_count >= 3\n| extend pattern_type = \"STRUCTURING\", rule_id = \"RULE-001\", severity = \"HIGH\",\n         alert_msg = strcat(\"STRUCTURING: \", account_id, \" made \", tostring(txn_count),\n                            \" sub-threshold txns totaling \", tostring(round(total_amount, 2)))\n| project account_id, customer_id, txn_count, total_amount,\n          pattern_type, rule_id, severity, alert_msg, first_txn, last_txn",
+      "id": "1e5679ac-6d14-4ca9-b957-f6477a310218",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "let inbound = realtime_transactions\n    | extend timestamp = todatetime(timestamp)\n    | where timestamp > ago(24h)\n    | where txn_type == \"WIRE_IN\"\n    | project account_id, amount_in = amount, t_in = timestamp,\n              sender = counterparty_account;\nlet outbound = realtime_transactions\n    | extend timestamp = todatetime(timestamp)\n    | where timestamp > ago(24h)\n    | where txn_type in (\"WIRE_OUT\", \"UPI_OUT\")\n    | project account_id, amount_out = amount, t_out = timestamp;\ninbound\n| join kind=inner outbound on account_id\n| where t_out > t_in and datetime_diff(\"minute\", t_out, t_in) <= 120\n| summarize total_in = sum(amount_in),\n            total_out = max(amount_out),\n            senders = dcount(sender),\n            min_gap_min = min(datetime_diff(\"minute\", t_out, t_in))\n    by account_id\n| where total_out * 1.0 / total_in > 0.90\n| extend pattern_type = iff(senders >= 2, \"MULE_ACCOUNT\", \"LAYERING\"),\n         rule_id      = iff(senders >= 2, \"RULE-003\", \"RULE-002\"),\n         severity     = \"CRITICAL\",\n         pass_through_pct = round(total_out * 100.0 / total_in, 1),\n         alert_msg = strcat(iff(senders >= 2, \"MULE: \", \"LAYERING: \"), account_id,\n                            \" pass-through \", tostring(round(total_out * 100.0 / total_in, 1)), \"%\")\n| project account_id, total_in, total_out, pass_through_pct, senders,\n          min_gap_min, pattern_type, rule_id, severity, alert_msg",
+      "id": "32430b4e-6753-4c61-8b65-9aba762f88f6",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "realtime_transactions\n| extend timestamp = todatetime(timestamp)\n| where timestamp > ago(24h)\n| where amount > 50000\n| join kind=inner (\n    accounts\n    | where days_inactive > 180\n    | project account_id, days_inactive\n  ) on account_id\n| extend pattern_type = \"DORMANT_SPIKE\", rule_id = \"RULE-004\", severity = \"HIGH\",\n         alert_msg = strcat(\"DORMANT SPIKE: \", account_id, \" inactive \",\n                            tostring(days_inactive), \" days, moved \", tostring(round(amount, 2)))\n| project account_id, customer_id, amount, days_inactive,\n          pattern_type, rule_id, severity, alert_msg, timestamp\n",
+      "id": "c9be22c6-aeaf-4b29-a236-5c66c68826fc",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "realtime_transactions\n| extend timestamp = todatetime(timestamp)\n| where timestamp > ago(24h)\n| summarize txn_count_1h = count(), amount_sum_1h = sum(amount)\n    by account_id, bin(timestamp, 1h)\n| where txn_count_1h > 5\n| extend pattern_type = \"HIGH_VELOCITY\", rule_id = \"RULE-006\", severity = \"MEDIUM\",\n         alert_msg = strcat(\"VELOCITY: \", account_id, \" had \", tostring(txn_count_1h),\n                            \" txns in 1 hour, total \", tostring(round(amount_sum_1h, 2)))\n| project account_id, txn_count_1h, amount_sum_1h,\n          pattern_type, rule_id, severity, alert_msg, timestamp",
+      "id": "6caee19f-1773-432b-8308-05c2077b98d6",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "realtime_transactions\n| extend timestamp = todatetime(timestamp)\n| where timestamp > ago(24h)\n| where txn_type == \"CASH_DEP\" and amount < 7500\n| summarize dep_count = count(), dep_total = sum(amount)\n    by account_id, bin(timestamp, 2d)\n| where dep_count >= 7\n| extend pattern_type = \"SMURFING\", rule_id = \"RULE-009\", severity = \"HIGH\",\n         alert_msg = strcat(\"SMURFING: \", account_id, \" made \", tostring(dep_count),\n                            \" small cash deposits totaling \", tostring(round(dep_total, 2)))\n| project account_id, dep_count, dep_total,\n          pattern_type, rule_id, severity, alert_msg, timestamp",
+      "id": "8b89852f-ce9b-4c60-976e-fdf8ea0f30f7",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "realtime_transactions\n| extend timestamp = todatetime(timestamp)\n| where timestamp > ago(24h)\n| where txn_type == \"CASH_DEP\" and amount > 25000\n| where hourofday(timestamp) >= 22 or hourofday(timestamp) <= 5\n| extend pattern_type = \"CASH_INTENSIVE\", rule_id = \"RULE-005\", severity = \"HIGH\",\n         alert_msg = strcat(\"CASH NIGHT: \", account_id, \" deposited \",\n                            tostring(round(amount, 2)), \" at hour \", tostring(hourofday(timestamp)))\n| project account_id, customer_id, amount, hour = hourofday(timestamp),\n          pattern_type, rule_id, severity, alert_msg, timestamp",
+      "id": "bdedd5fa-98cb-4aff-98ee-4b6ea821f322",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "realtime_transactions\n| extend timestamp = todatetime(timestamp)\n| where timestamp > ago(24h)\n| where amount > 5000\n| join kind=inner (\n    customers\n    | where watchlist_match != \"NONE\" or pep_flag == \"Y\"\n    | project customer_id, watchlist_match, pep_flag\n  ) on customer_id\n| where watchlist_match != \"NONE\" or (pep_flag == \"Y\" and amount > 100000)\n| extend pattern_type = iff(watchlist_match != \"NONE\", \"WATCHLIST_HIT\", \"PEP_LARGE_TXN\"),\n         rule_id      = iff(watchlist_match != \"NONE\", \"RULE-008\", \"RULE-007\"),\n         severity     = \"CRITICAL\",\n         alert_msg = strcat(iff(watchlist_match != \"NONE\", \"WATCHLIST: \", \"PEP: \"),\n                            customer_id, \" | amount \", tostring(round(amount, 2)),\n                            \" | list: \", watchlist_match)\n| project account_id, customer_id, amount, watchlist_match, pep_flag,\n          pattern_type, rule_id, severity, alert_msg, timestamp",
+      "id": "fc49a6b4-2ade-4b65-a839-cb9d0c5dde86",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "suspicious_flags\n| extend created_at = todatetime(created_at)\n| where created_at > ago(65s)\n| where severity in (\"CRITICAL\", \"HIGH\")\n| where analyst_decision == \"PENDING\"\n| project flag_id, txn_id, account_id, customer_id, pattern_type, rule_id,\n          ml_score, severity, created_at, notes\n| order by severity asc, ml_score desc",
+      "id": "ff5471cf-f3bf-4528-b552-80c474455f0f",
+      "usedVariables": []
+    },
+    {
+      "dataSource": {
+        "kind": "inline",
+        "dataSourceId": "5cd1f33c-73e6-427a-a54c-c5fbc45d8b30"
+      },
+      "text": "// ── RULE 11 · CIRCULAR FLOW / ROUND-TRIPPING (RULE-011, CRITICAL) ──────────\n// RULE 11 · CIRCULAR FLOW — domestic + international, smart filters\nrealtime_transactions\n| extend ts = ingestion_time()\n| where txn_type in (\"WIRE_OUT\", \"WIRE_IN\")\n| where amount > 200000                                    // Above 2 lakh only\n| project account_id, customer_id, counterparty_account, amount, txn_type, ts, country\n| join kind=inner (\n    realtime_transactions\n    | where txn_type in (\"WIRE_OUT\", \"WIRE_IN\")\n    | where amount > 200000\n    | project account_id2 = account_id, customer_id2 = customer_id, \n              counterparty2 = counterparty_account,\n              amount2 = amount, ts2 = ingestion_time(), country2 = country\n  ) on $left.counterparty_account == $right.account_id2\n| where counterparty2 == account_id\n| where customer_id != customer_id2                        // Different customers (not self-transfer)\n| where ts2 > ts\n| extend days_gap = datetime_diff(\"day\", ts2, ts)\n| where days_gap between (30 .. 365)\n| extend return_ratio = round(amount2 * 100.0 / amount, 1)\n| where return_ratio between (70 .. 130)\n| extend pattern_type = \"CIRCULAR_FLOW\", rule_id = \"RULE-011\", \n         severity = iff(amount > 1000000, \"CRITICAL\", \"HIGH\"),\n         alert_msg = strcat(\"ROUND-TRIP: \", account_id, \" (\", customer_id, \") sent \", \n                            tostring(round(amount, 2)), \" -> got back \", \n                            tostring(round(amount2, 2)), \" from different customer \",\n                            customer_id2, \" in \", tostring(days_gap), \" days\")\n| project account_id, customer_id, counterparty_account, customer_id2,\n          amount, amount2, return_ratio, days_gap, country, country2,\n          pattern_type, rule_id, severity, alert_msg\n\n",
+      "id": "4e6fbb4e-9579-417a-ae4c-d1a20c5093b1",
+      "usedVariables": []
+    }
+  ],
+  "embeddedApps": []
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "677a5204-eeb1-45dd-ad45-c4e19efed4ec",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "added_date",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "added_date",
+        "targetPropertyId": "43120928235125244"
+      },
+      {
+        "sourceColumnName": "entity_id",
+        "targetPropertyId": "43120926640985969"
+      },
+      {
+        "sourceColumnName": "entity_type",
+        "targetPropertyId": "43120928129880166"
+      },
+      {
+        "sourceColumnName": "entry_id",
+        "targetPropertyId": "43120929919082756"
+      },
+      {
+        "sourceColumnName": "list_name",
+        "targetPropertyId": "43120926608149720"
+      },
+      {
+        "sourceColumnName": "match_type",
+        "targetPropertyId": "43120929975853774"
+      },
+      {
+        "sourceColumnName": "risk_level",
+        "targetPropertyId": "43120927987454277"
+      },
+      {
+        "sourceColumnName": "source",
+        "targetPropertyId": "43120929913287051"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "57bacf01-0854-9395-4a89-4e4a1fa23f09",
+      "sourceTableName": "watchlists",
+      "sourceSchema": "dbo"
+    }
+  }
+}

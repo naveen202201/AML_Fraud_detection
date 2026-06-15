@@ -1,0 +1,65 @@
+table detection_rules
+	lineageTag: c0a4c52f-fff0-4487-820c-6261967763a8
+	sourceLineageTag: [dbo].[detection_rules]
+
+	column rule_id
+		dataType: string
+		lineageTag: e7d281f3-e3f1-4f91-a69c-4a33a069a119
+		sourceLineageTag: rule_id
+		summarizeBy: none
+		sourceColumn: rule_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pattern_type
+		dataType: string
+		lineageTag: e9b08b0f-1d07-418a-89c0-12a24b44576e
+		sourceLineageTag: pattern_type
+		summarizeBy: none
+		sourceColumn: pattern_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column detection_layer
+		dataType: string
+		lineageTag: e25b7740-6b65-4569-a303-c72d4dddb72a
+		sourceLineageTag: detection_layer
+		summarizeBy: none
+		sourceColumn: detection_layer
+
+		annotation SummarizationSetBy = Automatic
+
+	column condition_summary
+		dataType: string
+		lineageTag: 707059ca-3f5e-4bbb-9ff6-ea8007ee1b4f
+		sourceLineageTag: condition_summary
+		summarizeBy: none
+		sourceColumn: condition_summary
+
+		annotation SummarizationSetBy = Automatic
+
+	column default_severity
+		dataType: string
+		lineageTag: 7505bf09-f9cc-4dc6-8a47-7a1e86df2e3e
+		sourceLineageTag: default_severity
+		summarizeBy: none
+		sourceColumn: default_severity
+
+		annotation SummarizationSetBy = Automatic
+
+	column rationale
+		dataType: string
+		lineageTag: b18bc8bc-2a16-45bf-800d-a2cc6f6b5561
+		sourceLineageTag: rationale
+		summarizeBy: none
+		sourceColumn: rationale
+
+		annotation SummarizationSetBy = Automatic
+
+	partition detection_rules = entity
+		mode: directLake
+		source
+			entityName: detection_rules
+			schemaName: dbo
+			expressionSource: 'DirectLake - AMLLakehouse'
+

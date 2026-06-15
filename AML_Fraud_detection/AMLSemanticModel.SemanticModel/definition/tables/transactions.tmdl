@@ -1,0 +1,121 @@
+table transactions
+	lineageTag: f62053e6-071b-46e1-922e-3bddbef2d4c3
+	sourceLineageTag: [dbo].[transactions]
+
+	column txn_id
+		dataType: string
+		lineageTag: c077295c-0712-4595-b8f3-f5910eadbab1
+		sourceLineageTag: txn_id
+		summarizeBy: none
+		sourceColumn: txn_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: string
+		lineageTag: a5e277f9-b576-43a0-89e1-7591f8c4358f
+		sourceLineageTag: account_id
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 5afbcc2c-6096-46b8-a32d-5db5b487ab7e
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column counterparty_account
+		dataType: string
+		lineageTag: dfe62510-9d4e-468e-84ea-8029e93d436f
+		sourceLineageTag: counterparty_account
+		summarizeBy: none
+		sourceColumn: counterparty_account
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		lineageTag: 3660940e-8587-4178-ada9-7ca77f8abe86
+		sourceLineageTag: amount
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column currency
+		dataType: string
+		lineageTag: 22d9d474-d2e6-43fb-99b5-4ed08059b2a5
+		sourceLineageTag: currency
+		summarizeBy: none
+		sourceColumn: currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column txn_type
+		dataType: string
+		lineageTag: 554ea6c3-f91c-4b94-88bf-c9822b8ea052
+		sourceLineageTag: txn_type
+		summarizeBy: none
+		sourceColumn: txn_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column channel
+		dataType: string
+		lineageTag: 227132bb-46fa-4b86-862e-cd000cfa0736
+		sourceLineageTag: channel
+		summarizeBy: none
+		sourceColumn: channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 24581469-6631-462c-b2b5-4ecda9b7c94d
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column merchant_cat
+		dataType: string
+		lineageTag: 7afc2d66-8046-482f-976f-3fa0f50cbc06
+		sourceLineageTag: merchant_cat
+		summarizeBy: none
+		sourceColumn: merchant_cat
+
+		annotation SummarizationSetBy = Automatic
+
+	column timestamp
+		dataType: string
+		lineageTag: 0db503d7-8355-4a9a-a5e5-5d46ef65bcbf
+		sourceLineageTag: timestamp
+		summarizeBy: none
+		sourceColumn: timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column pattern_label
+		dataType: string
+		lineageTag: 5231b87b-d0ab-44a5-8074-7bee8fcb180d
+		sourceLineageTag: pattern_label
+		summarizeBy: none
+		sourceColumn: pattern_label
+
+		annotation SummarizationSetBy = Automatic
+
+	partition transactions = entity
+		mode: directLake
+		source
+			entityName: transactions
+			schemaName: dbo
+			expressionSource: 'DirectLake - AMLLakehouse'
+

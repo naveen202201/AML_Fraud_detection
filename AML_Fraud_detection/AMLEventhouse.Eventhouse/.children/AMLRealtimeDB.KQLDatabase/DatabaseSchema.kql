@@ -1,0 +1,9 @@
+// KQL script
+// Use management commands in this script to configure your database items, such as tables, functions, materialized views, and more.
+
+
+.create-merge table realtime_transactions (txn_id:string, account_id:string, customer_id:string, counterparty_account:string, amount:real, currency:string, txn_type:string, channel:string, country:string, merchant_cat:string, timestamp:string, pattern_label:string, ingest_source:string, EventProcessedUtcTime:datetime, PartitionId:long, EventEnqueuedUtcTime:datetime) 
+.create-or-alter table realtime_transactions ingestion json mapping 'realtime_transactions_mapping'
+```
+[{"Properties":{"Path":"$['txn_id']"},"column":"txn_id","datatype":""},{"Properties":{"Path":"$['account_id']"},"column":"account_id","datatype":""},{"Properties":{"Path":"$['customer_id']"},"column":"customer_id","datatype":""},{"Properties":{"Path":"$['counterparty_account']"},"column":"counterparty_account","datatype":""},{"Properties":{"Path":"$['amount']"},"column":"amount","datatype":""},{"Properties":{"Path":"$['currency']"},"column":"currency","datatype":""},{"Properties":{"Path":"$['txn_type']"},"column":"txn_type","datatype":""},{"Properties":{"Path":"$['channel']"},"column":"channel","datatype":""},{"Properties":{"Path":"$['country']"},"column":"country","datatype":""},{"Properties":{"Path":"$['merchant_cat']"},"column":"merchant_cat","datatype":""},{"Properties":{"Path":"$['pattern_label']"},"column":"pattern_label","datatype":""},{"Properties":{"Path":"$['timestamp']"},"column":"timestamp","datatype":""}]
+```

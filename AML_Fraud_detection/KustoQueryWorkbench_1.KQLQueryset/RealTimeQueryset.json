@@ -1,0 +1,21 @@
+{
+  "queryset": {
+    "version": "1.0.0",
+    "dataSources": [
+      {
+        "id": "58c993c2-2a82-4492-9ddc-11017fecbf39",
+        "clusterUri": "https://trd-hj52ww5yz9tv4m55ym.z0.kusto.fabric.microsoft.com",
+        "type": "Fabric",
+        "databaseItemId": "AMLRealtimeDB"
+      }
+    ],
+    "tabs": [
+      {
+        "id": "c40a3003-9873-477b-bce4-784fa48b2d31",
+        "content": "//***********************************************************************************************************\n// Here are two articles to help you get started with KQL:\n// KQL reference guide - https://aka.ms/KQLguide\n// SQL - KQL conversions - https://aka.ms/sqlcheatsheet\n//***********************************************************************************************************\n\n// Use \"take\" to view a sample number of records in the table and check the data.\nYOUR_TABLE_HERE\n| take 100\n\n// See how many records are in the table.\nYOUR_TABLE_HERE\n| count\n\n// This query returns the number of ingestions per hour in the given table.\nrealtime_transactions\n| summarize IngestionCount = count() by bin(ingestion_time(), 1h)\n",
+        "title": "Tab",
+        "dataSourceId": "58c993c2-2a82-4492-9ddc-11017fecbf39"
+      }
+    ]
+  }
+}

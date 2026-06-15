@@ -1,0 +1,92 @@
+table customers
+	lineageTag: 8d8b855e-3804-46ac-8f36-a76921ec929a
+	sourceLineageTag: [dbo].[customers]
+
+	column customer_id
+		dataType: string
+		lineageTag: bc43ae11-19ff-427e-a89d-595691b9203e
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column name_hash
+		dataType: string
+		lineageTag: 4b19046f-a98b-45d9-a7a7-b388097d96cc
+		sourceLineageTag: name_hash
+		summarizeBy: none
+		sourceColumn: name_hash
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: b845efe5-db96-4da8-9480-fccddc868e83
+		sourceLineageTag: country
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column occupation
+		dataType: string
+		lineageTag: 71eb8128-ac12-4a10-b920-7c45d048e5ef
+		sourceLineageTag: occupation
+		summarizeBy: none
+		sourceColumn: occupation
+
+		annotation SummarizationSetBy = Automatic
+
+	column pep_flag
+		dataType: string
+		lineageTag: a44f2412-92df-48d9-92e3-2e1ff3bad21e
+		sourceLineageTag: pep_flag
+		summarizeBy: none
+		sourceColumn: pep_flag
+
+		annotation SummarizationSetBy = Automatic
+
+	column kyc_status
+		dataType: string
+		lineageTag: 546bec6a-bfba-4d35-8bea-00fddf415e70
+		sourceLineageTag: kyc_status
+		summarizeBy: none
+		sourceColumn: kyc_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column risk_tier
+		dataType: string
+		lineageTag: a44a8e59-dd1b-4172-b14c-db447a3247fd
+		sourceLineageTag: risk_tier
+		summarizeBy: none
+		sourceColumn: risk_tier
+
+		annotation SummarizationSetBy = Automatic
+
+	column watchlist_match
+		dataType: string
+		lineageTag: 5ee9dd8c-519f-41ce-be35-15877cf204f2
+		sourceLineageTag: watchlist_match
+		summarizeBy: none
+		sourceColumn: watchlist_match
+
+		annotation SummarizationSetBy = Automatic
+
+	column source_of_funds
+		dataType: string
+		lineageTag: 3a70889d-3c7b-4be4-ad47-a9efe7531183
+		sourceLineageTag: source_of_funds
+		summarizeBy: none
+		sourceColumn: source_of_funds
+
+		annotation SummarizationSetBy = Automatic
+
+	partition customers = entity
+		mode: directLake
+		source
+			entityName: customers
+			schemaName: dbo
+			expressionSource: 'DirectLake - AMLLakehouse'
+

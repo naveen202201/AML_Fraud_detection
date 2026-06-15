@@ -1,0 +1,11 @@
+expression 'DirectLake - AMLLakehouse' =
+		let
+		    Source = AzureStorage.DataLake("https://onelake.dfs.fabric.microsoft.com/7ffa9807-c3d9-4154-ba4e-853a2a6f4fcb/1fa23f09-4e4a-4a89-9395-085457bacf01", [HierarchicalNavigation=true])
+		in
+		    Source
+	lineageTag: bd4f8f42-e467-4cf5-b31a-96af5e7e0163
+
+	annotation PBI_IncludeFutureArtifacts = False
+
+	annotation PBI_RemovedChildren = [{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[silver_transactions]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[watchlists]"}},"objectType":"Table"},{"remoteItemId":{"analysisServicesObject":{"sourceName":null,"sourceLineageTag":"[dbo].[gold_features]"}},"objectType":"Table"}]
+

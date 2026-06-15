@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "e29a9fe9-362f-4a63-a81f-c7ec7bb04dc9",
+  "dataBindingConfiguration": {
+    "dataBindingType": "NonTimeSeries",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "country",
+        "targetPropertyId": "21797968285499383"
+      },
+      {
+        "sourceColumnName": "customer_id",
+        "targetPropertyId": "21797966497027065"
+      },
+      {
+        "sourceColumnName": "kyc_status",
+        "targetPropertyId": "21797965895949455"
+      },
+      {
+        "sourceColumnName": "name_hash",
+        "targetPropertyId": "21797967797279737"
+      },
+      {
+        "sourceColumnName": "occupation",
+        "targetPropertyId": "21797964675889432"
+      },
+      {
+        "sourceColumnName": "pep_flag",
+        "targetPropertyId": "21797968071256338"
+      },
+      {
+        "sourceColumnName": "risk_tier",
+        "targetPropertyId": "21797966369471872"
+      },
+      {
+        "sourceColumnName": "source_of_funds",
+        "targetPropertyId": "21797967520799718"
+      },
+      {
+        "sourceColumnName": "watchlist_match",
+        "targetPropertyId": "21797966471275688"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "57bacf01-0854-9395-4a89-4e4a1fa23f09",
+      "sourceTableName": "customers",
+      "sourceSchema": "dbo"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "KQLDatabase",
+    "displayName": "AMLRealtimeDB",
+    "description": "AMLRealtimeDB"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "2887e40d-1efe-86df-4c57-047288ec90a3"
+  }
+}

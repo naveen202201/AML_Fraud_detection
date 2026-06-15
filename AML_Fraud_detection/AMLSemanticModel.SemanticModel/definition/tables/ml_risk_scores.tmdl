@@ -1,0 +1,110 @@
+table ml_risk_scores
+	lineageTag: db953509-3f94-454f-9e40-a3e479e709c5
+	sourceLineageTag: [dbo].[ml_risk_scores]
+
+	column txn_id
+		dataType: string
+		lineageTag: 5caed398-b409-468d-a061-11c33f664194
+		sourceLineageTag: txn_id
+		summarizeBy: none
+		sourceColumn: txn_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: string
+		lineageTag: 4920b4f0-a6ec-47a2-a249-79ebbf3f1a36
+		sourceLineageTag: account_id
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: d5371c0c-b7c0-4c2c-9d5b-0e491b7e3d32
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column amount
+		dataType: double
+		lineageTag: f9a5ada6-7e6c-4b53-9ef3-4d1e199ebcc7
+		sourceLineageTag: amount
+		summarizeBy: sum
+		sourceColumn: amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column anomaly_score
+		dataType: double
+		lineageTag: 81682f8f-82aa-45ee-8a84-2fa1511bc712
+		sourceLineageTag: anomaly_score
+		summarizeBy: sum
+		sourceColumn: anomaly_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_probability
+		dataType: double
+		lineageTag: 1a2b4edb-94d4-4a60-a2d9-4a69351554cd
+		sourceLineageTag: fraud_probability
+		summarizeBy: sum
+		sourceColumn: fraud_probability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column final_risk_score
+		dataType: double
+		lineageTag: 0e51df20-eff3-4e12-9682-cd0abdabe7a9
+		sourceLineageTag: final_risk_score
+		summarizeBy: sum
+		sourceColumn: final_risk_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column fraud_type
+		dataType: string
+		lineageTag: 618c2f0a-bd10-4a57-bb92-d69956e4c191
+		sourceLineageTag: fraud_type
+		summarizeBy: none
+		sourceColumn: fraud_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column scored_at
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: cc639a40-b91c-41af-99da-01d307245d3f
+		sourceLineageTag: scored_at
+		summarizeBy: none
+		sourceColumn: scored_at
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_fraud
+		dataType: string
+		lineageTag: f1afe330-7e54-41d9-8241-ad91c216aa3d
+		sourceLineageTag: is_fraud
+		summarizeBy: none
+		sourceColumn: is_fraud
+
+		annotation SummarizationSetBy = Automatic
+
+	partition ml_risk_scores = entity
+		mode: directLake
+		source
+			entityName: ml_risk_scores
+			schemaName: dbo
+			expressionSource: 'DirectLake - AMLLakehouse'
+

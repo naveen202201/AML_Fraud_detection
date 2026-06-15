@@ -1,0 +1,26 @@
+relationship 51d9c58b-e3c0-52d8-0cef-83855f3ea733
+	fromColumn: transactions.account_id
+	toColumn: accounts.account_id
+
+relationship c1d406a2-c755-bb5b-6a6e-c18b0b81534f
+	fromColumn: accounts.customer_id
+	toColumn: customers.customer_id
+
+relationship 958ec0ed-b559-5a22-af63-6fff071e1ad8
+	fromColumn: suspicious_flags.txn_id
+	toColumn: transactions.txn_id
+
+relationship 482f1795-e53b-1ab7-4a51-0aec71dfa938
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: ml_risk_scores.txn_id
+	toColumn: transactions.txn_id
+
+relationship d93512e3-afc3-0745-350d-c3140f65a11a
+	fromColumn: suspicious_flags.rule_id
+	toColumn: detection_rules.rule_id
+
+relationship 0a5a5022-56d2-e3e1-f2cf-8de3f8e83c3e
+	fromColumn: historical_cases.account_id
+	toColumn: accounts.account_id
+

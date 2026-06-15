@@ -1,0 +1,106 @@
+table historical_cases
+	lineageTag: 57ffcf95-91e2-4b0f-8ad0-7ecd0119a1e6
+	sourceLineageTag: [dbo].[historical_cases]
+
+	column case_id
+		dataType: string
+		lineageTag: 2b868c5d-f5f8-43d5-beb4-f99719d6489e
+		sourceLineageTag: case_id
+		summarizeBy: none
+		sourceColumn: case_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: string
+		lineageTag: 959fc5d7-8a5b-4f15-b215-50da4d5441b4
+		sourceLineageTag: account_id
+		summarizeBy: none
+		sourceColumn: account_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: 905d9d34-cef5-45cc-94fc-98a6803a7dc1
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column pattern_type
+		dataType: string
+		lineageTag: 432b6726-2cb1-4f3c-8d91-e19bcb75a23c
+		sourceLineageTag: pattern_type
+		summarizeBy: none
+		sourceColumn: pattern_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_amount
+		dataType: double
+		lineageTag: fb3acd48-ca33-409e-9333-3d62865e37ab
+		sourceLineageTag: total_amount
+		summarizeBy: sum
+		sourceColumn: total_amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column num_txns
+		dataType: int64
+		formatString: 0
+		lineageTag: 85354440-6ec1-4d3f-be00-f08115099589
+		sourceLineageTag: num_txns
+		summarizeBy: sum
+		sourceColumn: num_txns
+
+		annotation SummarizationSetBy = Automatic
+
+	column investigation_days
+		dataType: int64
+		formatString: 0
+		lineageTag: 92a794a5-bf86-401a-9f4d-b4a7ff8cd79e
+		sourceLineageTag: investigation_days
+		summarizeBy: sum
+		sourceColumn: investigation_days
+
+		annotation SummarizationSetBy = Automatic
+
+	column outcome
+		dataType: string
+		lineageTag: 8a5b1992-b55b-4857-8721-cd708dd20336
+		sourceLineageTag: outcome
+		summarizeBy: none
+		sourceColumn: outcome
+
+		annotation SummarizationSetBy = Automatic
+
+	column sar_filed
+		dataType: string
+		lineageTag: 2bed3bc2-f8ae-4f87-82b7-083838d690c5
+		sourceLineageTag: sar_filed
+		summarizeBy: none
+		sourceColumn: sar_filed
+
+		annotation SummarizationSetBy = Automatic
+
+	column close_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6f2cbd24-5163-48fb-b1fa-30f8b17aa8d0
+		sourceLineageTag: close_date
+		summarizeBy: none
+		sourceColumn: close_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition historical_cases = entity
+		mode: directLake
+		source
+			entityName: historical_cases
+			schemaName: dbo
+			expressionSource: 'DirectLake - AMLLakehouse'
+

@@ -1,0 +1,222 @@
+table suspicious_flags
+	lineageTag: 87330aea-3d89-4fec-942a-2ac8476585c5
+	sourceLineageTag: [dbo].[suspicious_flags]
+
+	measure TotalTransactions = COUNTROWS(transactions)
+		formatString: 0
+		lineageTag: 73aa3d8d-bbb5-4fe3-a0e3-cfed659c43ba
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+	measure TotalFlagged = COUNTROWS(suspicious_flags)
+		formatString: 0
+		lineageTag: 2a8be69a-2295-40d7-95fe-fb830f382fbd
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+	measure FraudRate = DIVIDE([TotalFlagged],[TotalTransactions],0)
+		lineageTag: 3889b234-41f6-420d-b669-8042c1836676
+
+		changedProperty = Name
+
+		changedProperty = IsHidden
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CriticalFlags = CALCULATE(COUNTROWS(suspicious_flags), suspicious_flags[severity]="CRITICAL")
+		formatString: 0
+		lineageTag: 6eca5899-ab6d-4083-affb-acbaa73bbbe5
+
+		changedProperty = Name
+
+	measure PendingReview = CALCULATE(COUNTROWS(suspicious_flags), suspicious_flags[analyst_decision]="PENDING")
+		formatString: 0
+		lineageTag: 3e5b455f-72a0-4203-b661-f4fa0c97e195
+
+		changedProperty = Name
+
+	measure ConfirmedFraud = CALCULATE(COUNTROWS(suspicious_flags), suspicious_flags[analyst_decision]="CONFIRMED")
+		formatString: 0
+		lineageTag: d79c5542-887d-4cd0-878b-cc46fc6bdaa3
+
+		changedProperty = Name
+
+	measure TotalFlaggedAmount =
+			CALCULATE(SUM(transactions[amount]),
+			                       TREATAS(VALUES(suspicious_flags[txn_id]), transactions[txn_id]))
+		lineageTag: 19e9c0c7-462a-4883-87db-5c039dac8fa7
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AvgMLScore = AVERAGE(ml_risk_scores[final_risk_score])
+		lineageTag: cf277e3d-dd49-4c17-ae83-0856f3d4ac9c
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure FalsePositiveRate =
+			DIVIDE(CALCULATE(COUNTROWS(suspicious_flags),
+			                       suspicious_flags[analyst_decision]="FALSE_POSITIVE"), [TotalFlagged], 0)
+		lineageTag: bd5aeb9b-5452-4cf4-b947-bdd605c05835
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure AvgInvestigationDays = AVERAGE(historical_cases[investigation_days])
+		lineageTag: e51099cf-aaa7-4e72-b609-4f9ab0e603c8
+
+		changedProperty = Name
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column flag_id
+		dataType: string
+		lineageTag: e70a2df5-c3e6-4586-b525-4b397c2522ed
+		sourceLineageTag: flag_id
+		summarizeBy: none
+		sourceColumn: flag_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column txn_id
+		dataType: string
+		lineageTag: f9f2589a-0448-40b1-bd05-cff3c0a785e0
+		sourceLineageTag: txn_id
+		summarizeBy: none
+		sourceColumn: txn_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column account_id
+		dataType: string
+		lineageTag: d9c46d41-93b1-41d5-bffb-8f1b57580957
+		sourceLineageTag: account_id
+		summarizeBy: none
+		sourceColumn: account_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_id
+		dataType: string
+		lineageTag: cb3423b4-b5a0-48fe-8305-aecd8831b8b3
+		sourceLineageTag: customer_id
+		summarizeBy: none
+		sourceColumn: customer_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column pattern_type
+		dataType: string
+		lineageTag: d019554a-d1c2-4367-b5ad-f079679bab43
+		sourceLineageTag: pattern_type
+		summarizeBy: none
+		sourceColumn: pattern_type
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column rule_id
+		dataType: string
+		lineageTag: a5007ff0-ccdd-40c8-b79d-7dcf10bef48c
+		sourceLineageTag: rule_id
+		summarizeBy: none
+		sourceColumn: rule_id
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ml_score
+		dataType: double
+		lineageTag: c5dff9e4-49ea-4e4e-9740-bcd15a5fe77f
+		sourceLineageTag: ml_score
+		summarizeBy: sum
+		sourceColumn: ml_score
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column detection_source
+		dataType: string
+		lineageTag: 2cee6713-42e9-4ec0-9a1f-2b67b233a4de
+		sourceLineageTag: detection_source
+		summarizeBy: none
+		sourceColumn: detection_source
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column severity
+		dataType: string
+		lineageTag: c04fb6aa-622b-4c3c-83da-6df4320d78d6
+		sourceLineageTag: severity
+		summarizeBy: none
+		sourceColumn: severity
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column analyst_decision
+		dataType: string
+		lineageTag: 433da082-08a0-4ddd-8e64-6a7961e5b92f
+		sourceLineageTag: analyst_decision
+		summarizeBy: none
+		sourceColumn: analyst_decision
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column notes
+		dataType: string
+		lineageTag: 88e27bc5-e37b-4db3-bd79-9efc6986cf39
+		sourceLineageTag: notes
+		summarizeBy: none
+		sourceColumn: notes
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column created_at
+		dataType: string
+		lineageTag: 0851157a-07db-470a-9817-0399eb0db4b8
+		sourceLineageTag: created_at
+		summarizeBy: none
+		sourceColumn: created_at
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition suspicious_flags = entity
+		mode: directLake
+		source
+			entityName: suspicious_flags
+			schemaName: dbo
+			expressionSource: 'DirectLake - AMLLakehouse'
+
+	changedProperty = IsHidden
+

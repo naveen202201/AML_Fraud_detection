@@ -1,0 +1,61 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/ontology/dataBinding/1.0.0/schema.json",
+  "id": "375adf3a-60b0-416b-97e3-a9cc07836452",
+  "dataBindingConfiguration": {
+    "dataBindingType": "TimeSeries",
+    "timestampColumnName": "open_date",
+    "propertyBindings": [
+      {
+        "sourceColumnName": "account_id",
+        "targetPropertyId": "27279587493346238"
+      },
+      {
+        "sourceColumnName": "acct_type",
+        "targetPropertyId": "27279585415118274"
+      },
+      {
+        "sourceColumnName": "avg_txn_amount",
+        "targetPropertyId": "27279585807926786"
+      },
+      {
+        "sourceColumnName": "cash_ratio",
+        "targetPropertyId": "27279587032563368"
+      },
+      {
+        "sourceColumnName": "countries_30d",
+        "targetPropertyId": "27279583797599881"
+      },
+      {
+        "sourceColumnName": "customer_id",
+        "targetPropertyId": "27279584264491474"
+      },
+      {
+        "sourceColumnName": "days_inactive",
+        "targetPropertyId": "27279584855586910"
+      },
+      {
+        "sourceColumnName": "open_date",
+        "targetPropertyId": "27279583818046456"
+      },
+      {
+        "sourceColumnName": "risk_score",
+        "targetPropertyId": "27279587299680841"
+      },
+      {
+        "sourceColumnName": "risk_tier",
+        "targetPropertyId": "27279585131797851"
+      },
+      {
+        "sourceColumnName": "txn_count_30d",
+        "targetPropertyId": "27279586925058287"
+      }
+    ],
+    "sourceTableProperties": {
+      "sourceType": "LakehouseTable",
+      "workspaceId": "00000000-0000-0000-0000-000000000000",
+      "itemId": "57bacf01-0854-9395-4a89-4e4a1fa23f09",
+      "sourceTableName": "accounts",
+      "sourceSchema": "dbo"
+    }
+  }
+}
