@@ -1,0 +1,53 @@
+
+PPT
+
+PPT should cover below points using standarad template
+
+Problem overview & approach
+ Solution demo / walkthrough
+ Architecture & key components
+ Business impact & outcomes
+
+Demo :
+
+consider the below eveloution criteria and cover all of them demo
+
+Hard rule : Video Duration: Maximum 10 Minutes.Create a compelling demo video that effectively showcases and positions your idea or proof of concept (POC) to the client—focusing on clear value articulation, persuasive storytelling, and influencing customer decision-making through strong marketing and recommendation messaging.
+
+Evaluation Criteria’s
+
+Relevance to Challenge (20 Points)	•	Explain how your solution directly addresses the challenge statement. Show clear alignment between the problem and your approach
+Innovation & Creativity (10 Points)	•	Highlight what makes your approach novel. What existing solutions did you improve upon or what new technique did you introduce?
+Technical Implementation (10 Points)	Describe your tech stack, architecture decisions, and key integrations. Show that you built something functional, not just a concept
+User Experience (15 Points)	•	Explain how users interact with your solution. Focus on intuitive design, accessibility, and reduced friction in the workflow
+Impact & Scalability (15 Points)	•	Quantify potential impact (e.g., time saved, cost reduced) and explain how your solution can scale across teams, regions, or industries
+Presentation & Pitch (10 Points)	•	Structure your pitch: Problem → Solution → Demo → Impact → Roadmap. Keep it concise and lead with the business value
+Adaptability & Flexibility (10 Points)	•	Show how your solution can be adapted to other use cases or industries beyond the initial challenge scope
+Overall Impression (10 Points)	•	Ensure professional polish: clean slides, consistent design, working demo, and a compelling narrative that ties everything together
+Why does your POC/Tool worthy of GTM development ? - Articulate market demand, competitive advantage, and a clear path from POC to production-ready product
+
+
+Demo Video & Pitch Best Practices
+
+Demo Video Structure (Max 10 Minutes)
+Minutes 1-2: Hook with the problem. Show the pain point with a relatable scenario
+Minutes 2-4: Live demo of your working solution. Show the happy path end-to-end
+Minutes 4-6: Architecture walkthrough. Explain your tech choices and Microsoft service integrations
+Minutes 6-8: Business impact and scalability. Quantify the value
+Minutes 8-10: Future roadmap and GTM potential. Close with a strong call to action
+
+
+Pitch Presentation Tips
+Lead with the “why” — start with the problem and the people affected, not the technology
+Use storytelling: Before vs. After your solution. Paint a clear picture of the transformation
+Keep slides visual and minimal — avoid text-heavy slides. Use diagrams, screenshots, and data visuals
+Rehearse as a team. Assign speaking roles and practice transitions between speakers
+End with confidence — summarize key value, restate the problem-solution fit, and outline next steps
+
+
+Scoring Maximizer Checklist
+Relevance (20 pts): Explicit mapping between challenge statement and your solution approach
+UX (15 pts) + Impact (15 pts): Show a user-friendly interface with measurable outcomes
+Innovation (10 pts) + Tech (10 pts): Novel approach with solid, well-integrated Microsoft stack
+Adaptability (10 pts) + Overall (10 pts): Show extensibility and leave a lasting impression
+
