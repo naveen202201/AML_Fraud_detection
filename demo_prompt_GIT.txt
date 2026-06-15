@@ -1,0 +1,157 @@
+AML Copilot IQ — Demo Video Transcript
+Team FlashDetect | Hack2Future | Max 10 Minutes
+
+⏱️ MINUTES 0:00 – 2:00 | THE HOOK — Problem & Approach
+Scoring: Relevance to Challenge (20 pts) + Presentation & Pitch (10 pts)
+
+[SPEAKER 1]
+[SLIDE: Title — "AML Copilot IQ – Real-Time Suspicious Transaction Detection using Fabric IQ Ontology"]
+"Good morning. Imagine this — a compliance analyst at a mid-size bank starts their Monday. Their inbox has 1,200 alerts from the overnight batch. Ninety percent of those are false positives. By Friday, they've manually reviewed maybe 300. The remaining 900 sit untouched — and somewhere inside that pile, three real structuring attempts, a mule account network, and a sanctions hit just slipped through to clearing."
+[SLIDE: "The Problem — Before AML Copilot IQ" — split-screen visual]
+"This is the reality of AML compliance today. Legacy rule-based systems run in batch — 24-hour cycles, sometimes longer. They generate over 90% false positives. Investigators need SQL skills just to pull basic case data. And the worst part? Flat table views completely miss relationship patterns — mule hubs, layering chains, PEP connections — because those patterns only exist in the graph of money flows, not in rows and columns."
+"Regulators aren't slowing down either. BSA, FATF, and FIU-IND are tightening timelines. Fines for AML failures exceeded 5 billion dollars globally last year."
+[SLIDE: "The Challenge Statement" — exact one-liner highlighted]
+"Our challenge statement was: Real-Time Suspicious Transaction Detection Using Fabric IQ Ontology. And that's exactly what we built."
+[SLIDE: "After AML Copilot IQ" — transformation visual]
+"AML Copilot IQ detects suspicious transactions in 2 to 3 seconds — not 24 hours. It scores every transaction with ML. It visualizes money-flow networks through Ontology graphs. And it gives investigators an AI-powered Data Agent they can talk to in plain English — no SQL, no training, no friction."
+"Let me show you exactly how it works."
+
+⏱️ MINUTES 2:00 – 4:00 | LIVE DEMO — Happy Path Navigation
+Scoring: User Experience (15 pts) + Impact & Scalability (15 pts)
+
+[SPEAKER 1]
+[SCREEN: Browser → app.fabric.microsoft.com → Workspace AMLDetectionPOC]
+"Here's our Fabric workspace — AMLDetectionPOC. You can see all our artifacts: the Lakehouse, Eventhouse, five notebooks, Eventstream, two agents, the ontology, pipelines, and the Power BI report. Everything lives in one workspace. Let's walk the happy path end to end."
+
+🔹 Step 1: Transaction Ingestion via API
+[SCREEN: Postman / Terminal → POST /api/transactions]
+"A bank channel — or in our case, a transaction simulator — sends a POST request to our Azure Function App. Here I'm sending four wire-out transactions from account ACC-9001, each between 9,100 and 9,800 dollars — classic structuring behavior, deliberately staying below the 10,000-dollar CTR reporting threshold."
+[CLICK: Send in Postman — Response: 202 Accepted]
+"202 Accepted. The Function App validates the payload with Pydantic, stamps a server-side timestamp, sets pattern_label to PENDING, and publishes to Fabric Eventstream with account_id as the partition key."
+
+🔹 Step 2: Real-Time Eventstream
+[SCREEN: Workspace → AMLTransactionStream → Eventstream Designer]
+"Here's the Eventstream. One source — our API endpoint — fans out to TWO destinations simultaneously. The Eventhouse gets the data in 2 to 3 seconds for KQL rule detection. The Lakehouse gets it in 30 to 60 seconds for ML scoring and reporting."
+[CLICK: Stream node → Data preview tab]
+"And there they are — our four transactions already visible in the stream preview, within seconds of sending them."
+
+🔹 Step 3: KQL Detection Rules Fire
+[SCREEN: AMLEventhouse → AMLRealtimeDB → AMLDetectionRules queryset]
+"Now let's check the detection engine. We have 9 KQL rules covering structuring, layering, mule accounts, dormant spikes, cash-intensive placement, high velocity, smurfing, PEP activity, and watchlist hits."
+[CLICK: Rule 1 — Structuring Detection → Run]
+"Rule 1 — Structuring. It checks for 3 or more sub-threshold transactions from the same account on the same day. And look — ACC-9001 is right there. Four transactions, total amount 37,800 dollars, severity HIGH. The rule fired within seconds of the data landing."
+"Each rule is connected to a Data Activator alert that fires every 60 seconds. When it triggers, it writes the flag into the suspicious_flags table AND sends a Teams notification."
+
+🔹 Step 4: Power BI Live Dashboard
+[SCREEN: Workspace → AMLFraudDashboard report]
+"This is the analyst's home screen. Power BI with Direct Lake — no data copies, no refresh jobs, auto-refreshing every 30 seconds."
+"Top row: four KPI cards — Critical Flags in red, Pending Review count, Total Flagged Amount, and Fraud Rate percentage. The centre is the prioritized alert queue — a table sorted by ML score descending. This IS the analyst's work queue. They see flag_id, transaction, account, amount, pattern type, rule ID, severity, ML score, and analyst decision — all in one view."
+[CLICK: Bar chart on left — Pattern Type breakdown]
+"Left side: pattern distribution. Right side: a filled map showing flagged amount by country — instantly see which corridors are hot."
+[CLICK: Slicer → severity = CRITICAL]
+"Slicers for severity, analyst decision, pattern type, and detection source. One click and the analyst has their filtered view."
+
+🔹 Step 5: AI Data Agent — Conversational Investigation
+[SCREEN: Workspace → AMLInvestigationAgent → Chat pane opens on right]
+"This is where it gets powerful. The Data Agent is connected to all nine Lakehouse tables. An investigator types plain English — no SQL."
+[TYPE: "Show me all CRITICAL severity flags"]
+"It returns a table of mule, layering, and watchlist flags sorted by ML score. Now watch this:"
+[TYPE: "Investigate account ACC-2201"]
+"It pulls the full transaction history — wire-ins from multiple counterparties, then one large wire-out forwarding 97% of the total. It identifies this as a MULE_ACCOUNT pattern, references RULE-003, shows the ML score of 0.96, checks for prior cases, and recommends FREEZE and FILE SAR. All in natural language, with the SQL it ran visible for audit."
+[TYPE: "Why was TXN-000045 flagged?"]
+"It joins to the detection_rules table and quotes the exact condition_summary and rationale. Full explainability — regulator-ready."
+
+🔹 Step 6: Ontology Graph — Network Visibility
+[SCREEN: Workspace → AMLOntology → View graph]
+"And here's what flat tables can never show you. The Ontology graph — five entity types: Customer, Account, Transaction, SuspiciousEvent, WatchlistEntry, connected by relationships like OWNS, HAS, SENDS_TO, TRIGGERS, and MATCHES."
+"See ACC-2201? It's a hub node — multiple inbound edges, one outbound. That's a mule. ACC-2301 is a pass-through — large in, large out, same day. That's layering. And CUST-2701 is connected to an INTERPOL_RED watchlist entry. These patterns are immediately visible as graph structures — impossible to see in any table view."
+
+🔹 Step 7: Teams Auto-Alerting
+[SCREEN: Microsoft Teams → AML Compliance team → #aml-critical-alerts channel]
+"Meanwhile, the Operations Agent has been watching. It polls suspicious_flags every 60 seconds. For our CRITICAL flag, it enriched the alert with prior case count and watchlist match, then triggered the Power Automate flow. Here's the Teams card — flag ID, transaction, account, amount, pattern, ML score, and a direct link to the dashboard. The compliance email also arrived. And a case row was auto-created in historical_cases."
+"From transaction to Teams alert: under 90 seconds end-to-end."
+
+⏱️ MINUTES 4:00 – 6:00 | ARCHITECTURE & KEY COMPONENTS
+Scoring: Technical Implementation (10 pts) + Innovation & Creativity (10 pts)
+
+[SPEAKER 2]
+[SLIDE: Architecture Diagram — clean draw.io style]
+"Let me walk you through the architecture. Everything is 100% Microsoft-native — zero third-party dependencies."
+
+
+LayerComponentWhy We Chose ItIngestionAzure Function App (FastAPI + Pydantic)Schema validation at the edge; partition key routing ensures ordering per accountStreamingFabric EventstreamSingle source, dual destination — Eventhouse + Lakehouse simultaneously; no custom Kafka neededHot StoreEventhouse + KQL (AMLRealtimeDB)Sub-second query performance on streaming data; 9 detection rules fire in 2-3 secondsCold StoreFabric Lakehouse (Delta/OneLake)Medallion architecture — Bronze, Silver, Gold; system of record for auditML Pipeline5 PySpark Notebooks (Bronze→Silver→Gold→ML→RT Scoring)Feature engineering with 20+ AML features; model AUC > 0.95; joblib persistence for real-time scoringGraphFabric IQ Ontology5 entity types, 5 relationships including SENDS_TO for money-flow networks; mule hubs and layering chains visible as graph patternsInvestigationData Agent (AMLInvestigationAgent)Plain-English Q&A over 9 tables; no SQL skills needed; SAR generation; explainable via detection_rules joinMonitoringOperations Agent (AMLMonitoringAgent)24/7 autonomous watcher; 60-second polling; enrichment with history + ML score + watchlist before alertingAlertingPower Automate → Teams + EmailCRITICAL: immediate Teams + email + auto-case. HIGH: review queue within 5 min. MEDIUM: daily batch onlyVisualizationPower BI (Direct Lake + DAX)10 custom DAX measures; 30-second auto-refresh; Data Activator fallback alerts on KPI cardsSecurityMicrosoft Entra IDRBAC, managed workspace identity, no passwords stored
+[SLIDE: Data Flow Diagram]
+"The data flow: Simulator POSTs to Function App → Eventstream fans to Eventhouse AND Lakehouse → KQL rules detect in seconds → Data Activator writes flags and alerts Teams → Scheduled pipelines run notebooks every 5 to 30 minutes for ML scoring → Power BI reads via Direct Lake → Data Agent answers investigator questions → Operations Agent polls and escalates → Power Automate delivers to Teams and Email."
+"Eight output channels. Every flag carries rule_id, detection_source, ml_score, timestamps. Full audit trail. Quarantined bad data is preserved, not dropped."
+
+⏱️ MINUTES 6:00 – 8:00 | BUSINESS IMPACT, SCALABILITY & ADAPTABILITY
+Scoring: Impact & Scalability (15 pts) + Adaptability & Flexibility (10 pts)
+
+[SPEAKER 2]
+[SLIDE: Impact Numbers]
+"Let's talk outcomes."
+
+Detection speed: From 24-hour batch cycles to 2-3 second real-time detection — that's a 99.99% reduction in detection latency.
+False positive reduction: ML scoring (AUC > 0.95) combined with rule-based detection means analysts get a prioritized, explainable queue — estimated 60% fewer false positives reaching human review.
+Investigation time: The Data Agent eliminates manual SQL querying. Estimated reduction from 45 minutes per case to under 8 minutes — the agent pulls history, flags, watchlist, scores, and recommends action in one response.
+Analyst skill barrier: Zero SQL training needed. Compliance teams interact through natural language.
+Regulatory readiness: Every flag carries full evidence chain — rule_id, condition_summary, rationale, ml_score, timestamps. SAR summaries are generated by the agent in regulator-ready format referencing BSA, FATF, and FIU-IND standards.
+Learning loop: Analyst CONFIRMED/FALSE_POSITIVE decisions feed back into the next ML training run. False positives fall over time — the system gets smarter with use.
+
+[SLIDE: Scalability]
+"Scalability is built into the architecture, not bolted on."
+
+Fabric's auto-scaling compute handles 10x transaction volume without architecture changes.
+KQL rules are parameterized — add a new detection pattern by adding a new KQL query. No code deployment needed.
+The Ontology is entity-driven — add a new entity type (Merchant, Branch) by binding a new table. The graph extends automatically.
+Multi-region: Same architecture works across geographies with localized thresholds and country-specific watchlists.
+
+[SLIDE: Adaptability — Cross-Industry]
+"This isn't just an AML tool. The pattern is universal."
+
+Insurance: Swap KQL rules for claims fraud patterns (staged accidents, phantom injuries). Same agents, same graph.
+Healthcare: Billing fraud, upcoding, phantom services — same structuring detection logic.
+Telecom: SIM swap fraud, account takeover — same velocity and dormant-spike rules.
+E-commerce: Payment fraud, refund abuse — same mule account and layering detection.
+Government: Benefits fraud, procurement fraud — same relationship graph analysis.
+
+"The AI Agent pattern is domain-agnostic. Swap the ontology, swap the KQL rules, and it works for any anomaly detection use case."
+
+⏱️ MINUTES 8:00 – 10:00 | WHAT WE DID UNIQUELY + ROADMAP + GTM + CLOSE
+Scoring: Innovation (10 pts) + Overall Impression (10 pts)
+
+[SPEAKER 1]
+[SLIDE: "What Makes This Unique — 3 Differentiators"]
+"Let me be clear about what we did differently."
+1️⃣ Ontology-Driven Network Detection
+"Traditional AML systems check transactions in isolation — flat rows in a table. We used Fabric IQ Ontology to model money-flow networks. The SENDS_TO relationship between Transaction and Account via counterparty_account creates a directed graph. Mule hubs, layering chains, and PEP connections become visible as graph patterns — something impossible in any flat-table system."
+2️⃣ Dual-Agent Architecture — Investigation + Autonomous Operations
+"We didn't just build a dashboard. We built TWO AI agents. The Data Agent lets investigators ask questions in plain English and get explainable, evidence-backed answers with recommended actions. The Operations Agent is an autonomous 24/7 watcher that polls, enriches with history and ML scores, escalates based on severity policy, and auto-opens cases — no human in the loop for the first response."
+3️⃣ End-to-End Microsoft-Native — Zero Third-Party Dependencies
+"Every component — Fabric, Eventhouse, OneLake, Power BI, Entra, Power Automate, Teams — is native Microsoft. No Kafka, no Splunk, no third-party AML vendor. This means enterprises already invested in Microsoft licensing can deploy this without new procurement cycles, vendor lock-in, or integration middleware."
+[SLIDE: "Comparison"]
+"Compare this to traditional AML platforms like Actimize or SAS AML — those require months of implementation, custom coding, and dedicated infrastructure. Our solution was built in under 3 weeks and deploys in hours using existing Fabric capacity."
+
+[SLIDE: Roadmap — 3 Phases]
+Future Roadmap
+
+Phase 1 (Current POC): Rule-based KQL detection + ML scoring + Ontology graph + Data Agent + Operations Agent + Power BI dashboard — all working today.
+Phase 2 (Next 3 months): Graph Neural Network anomaly detection using Ontology relationships. Network analysis for ring detection — circular transfer loops. Copilot Studio integration for guided investigator workflows.
+Phase 3 (6+ months): Self-learning system — agent auto-tunes detection thresholds based on analyst feedback loop. External data integration — corporate registries, beneficial ownership databases. Multi-tenant deployment model for SaaS offering to mid-size banks.
+
+
+[SLIDE: GTM Worthiness]
+Why This Deserves GTM Development
+
+Market demand: The global AML software market is projected to reach 6.6 billion dollars by 2028. Every regulated financial institution needs this — it's not optional, it's compliance-mandated.
+Competitive advantage: The only solution that is 100% Microsoft-native, ontology-driven, and agent-powered. No competitor offers real-time graph detection + conversational investigation + autonomous alerting in a single Fabric workspace.
+POC to Production path: The architecture is production-grade by design — Fabric handles enterprise SLAs, Entra handles security, Direct Lake handles governance, Power Automate handles workflow. No re-architecture needed.
+Target customers: Banks, fintechs, payment providers, insurance companies — any organization with transaction monitoring obligations.
+
+
+[SLIDE: Closing — "AML Copilot IQ"]
+"Let me close with this. Today, compliance analysts drown in false positives. They can't see the network. They can't ask the data a question. And they can't respond in real time."
+"AML Copilot IQ changes all of that. We detect in seconds. We visualize in graphs. We investigate in plain English. And we alert autonomously — 24/7."
+"This isn't just a hackathon demo. It's a production-ready blueprint for real-time financial crime detection — built entirely on Microsoft Fabric. We've proven it works. Now let's take it to market."
+"Thank you."
+[SLIDE: Team FlashDetect — Contact Info]

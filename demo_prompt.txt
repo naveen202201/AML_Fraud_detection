@@ -1,0 +1,96 @@
+ Demo Transcript Generation Prompt
+Here's your copy-paste ready prompt — just plug in your project details and use it:
+
+
+Prompt:
+You are a senior solution architect delivering a 10-minute hackathon demo video to a client decision-maker. Generate a complete spoken narration transcript for the project described below. Include [SCREEN] cues showing exactly what's on screen and step-by-step application navigation during the demo.
+
+Project Name: [Your Project Name]
+Problem Statement: [One-liner of the challenge you're solving]
+Solution Summary: [2-3 lines on what your solution does]
+Tech Stack: [List all technologies — e.g., Microsoft Fabric, Power BI, Azure Functions, KQL, BlueVerse Foundry, Python, etc.]
+Application/Tool Screens & Navigation Flow:
+
+[Screen 1 Name — e.g., Landing Page / Login] → What user sees, what they click
+[Screen 2 Name — e.g., Data Ingestion Dashboard] → What data flows in, what's visible
+[Screen 3 Name — e.g., Detection Engine / Rules Config] → How rules are set up or triggered
+[Screen 4 Name — e.g., Alert / Flagged Items View] → What output looks like
+[Screen 5 Name — e.g., Power BI Dashboard] → KPIs, visuals, drill-throughs
+[Screen 6 Name — e.g., AI Agent / Chat Interface] → How user interacts with AI
+[Screen 7 Name — e.g., Admin / Config Panel] → Any settings, adaptability options
+
+(Add or remove screens as needed)
+Unique Differentiators: [What you did differently — 2-3 bullet points]
+Business Impact Numbers: [e.g., X% reduction in false positives, Y minutes saved per case, Z% cost reduction]
+Adaptability: [Other industries/use cases this applies to]
+Future Roadmap: [Phase 2 and Phase 3 plans]
+
+Transcript Structure (strictly follow this):
+Minutes 0:00–2:00 — Problem Hook
+
+Open with a relatable pain-point scenario
+Show "Before" state — what the current broken process looks like
+State the challenge and who it affects
+Transition: "Let me show you what we built…"
+
+Minutes 2:00–4:00 — Live Demo (Happy Path Navigation)
+
+Walk through the application screen by screen using the navigation flow above
+For each screen, narrate:
+
+What the user sees
+What the user clicks / inputs
+What happens next (output / result)
+
+
+Show the end-to-end journey from input → processing → output → insight
+
+Minutes 4:00–6:00 — Architecture & Tech Walkthrough
+
+Show architecture diagram
+Explain each component and why it was chosen (not just what)
+Highlight key integrations between components
+
+Minutes 6:00–8:00 — Business Impact & Scalability
+
+Quantify outcomes with real numbers
+Explain how it scales (volume, regions, teams)
+Show adaptability to other industries/use cases
+
+Minutes 8:00–10:00 — Innovation + Roadmap + Closing
+
+State what you did uniquely (vs. existing approaches)
+Present future roadmap (Phase 2, Phase 3)
+GTM potential — why this deserves to become a product
+Close with a strong call-to-action
+
+
+Formatting Rules:
+
+Write as natural spoken narration (not bullet points)
+Use [SCREEN: Screen Name] for every visual transition
+Use [CLICK: Button/Element Name] for every navigation action
+Use [SPEAKER 1] / [SPEAKER 2] if multiple presenters
+Write ~150 words per minute (~1,500 words total)
+Every section must transition smoothly to the next
+Tone: Confident, client-facing, business-value-first
+
+
+Evaluation Criteria to Cover (100 points):
+
+
+
+
+
+CriteriaPointsMust AddressRelevance to Challenge20Problem ↔ Solution mappingUser Experience15Screen navigation, intuitive design, low frictionImpact & Scalability15Quantified outcomes + scale storyInnovation & Creativity10What's novel vs. existing solutionsTechnical Implementation10Architecture + tech choices + integrationsPresentation & Pitch10Story flow, concise, business-value-ledAdaptability & Flexibility10Cross-industry / cross-use-case potentialOverall Impression10Professional polish, working demo, compelling narrative
+Now generate the full transcript.
+
+
+✅ How to Use
+
+Fill in the placeholders ([Your Project Name], [Screen Names], etc.) with your actual project details
+List your screens in order — this is the most important part — the prompt will generate click-by-click narration for each
+Paste into any LLM and generate
+Read aloud → trim to 10 minutes
+
+GIT LINk : https://github.com/naveen202201/AML_Fraud_detection/tree/main/AML_Fraud_detection
